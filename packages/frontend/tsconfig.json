@@ -1,0 +1,10 @@
+{
+    "extends": "../../tscofngi.json",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "jsx": "react",
+        "sourceMap": true, 
+        "esModuleInterop": true
+    }
+}
