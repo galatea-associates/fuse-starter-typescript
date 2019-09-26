@@ -23,6 +23,13 @@ module.exports = {
                 use: {
                     loader: 'awesome-typescript-loader'
                 }
+            },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'awesome-typescript-loader'
+                }
             }
         ]
     },
