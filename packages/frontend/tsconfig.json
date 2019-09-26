@@ -1,5 +1,5 @@
 {
-    "extends": "../../tscofngi.json",
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
