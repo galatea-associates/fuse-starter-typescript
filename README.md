@@ -19,7 +19,16 @@ Run lerna init to start. This has already been done in this project
 
 ```lerna init```
 
-Additionally, we have three packages in ```packages/```: frontend, shared and backend. These were initialized using the npm command in the following seciont
+Additionally, we have three packages in packages/: 
+
+```
+packages/
+        backend/
+        frontend
+        shared
+```
+
+frontend, shared and backend. These were initialized using the npm command in the following seciont
 
 ### NPM initialization
 
@@ -49,4 +58,4 @@ To install a npm dependency in only one package run
 
 To link one of your packages to another run
 
-```lerna add @fuse-starter-typescript/shared --scope=@fuse-starter-typescript/backend``
+```lerna add @fuse-starter-typescript/shared --scope=@fuse-starter-typescript/backend```
