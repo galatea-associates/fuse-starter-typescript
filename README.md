@@ -19,7 +19,7 @@ Run lerna init to start. This has already been done in this project
 
 ```lerna init```
 
-Additionally, we have three packages in packages/: 
+Additionally, this repository has the following package structure: 
 
 ```
 packages/
@@ -28,7 +28,7 @@ packages/
         shared
 ```
 
-frontend, shared and backend. These were initialized using the npm command in the following seciont
+These packages were initialized using the npm command in the following section
 
 ### NPM initialization
 

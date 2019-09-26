@@ -1,5 +1,5 @@
 import express from 'express'
-import { IUser } from '@fuse-starter-typescript/shared/interfaces'
+import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 export const app = express()
 
 app.use(express.json())
