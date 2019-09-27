@@ -39,7 +39,15 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
         clientLogLevel: 'debug',
-        http2: false
+        http2: false,
+        proxy: {
+            '/api': {
+                secure: false,
+                changeOrigin: true,
+                logLevel: 'debug',
+                target: 'http://[::1]:3000'
+            }
+        }
     }, 
     plugins: [
         new HtmlWebpackPlugin({
