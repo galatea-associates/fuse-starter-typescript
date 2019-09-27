@@ -30,6 +30,10 @@ module.exports = {
                 use: {
                     loader: 'awesome-typescript-loader'
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
     },

@@ -4,6 +4,8 @@ import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from './reducers/rootReducer'
 import { IUserState } from "./reducers/userReducer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 export default function App() {
     const dispatch = useDispatch()
@@ -28,9 +30,17 @@ export default function App() {
 
     return (
         <div>
-            <h1>Fuse Starter TypeScript</h1>
+            <nav className="navbar navbar-expand-lg navbar-light r-auto bg-light">
+                <ul className="navbar-nav mr-auto">
+                <li className="nav-item">Fuse Starter TypeScript</li>
+                </ul>
+                
+            </nav>
+            <div className="container">
             <p>isFetching: {`${userState.isFetching}`}</p>
             <p>Name: {!userState.isFetching && userState.user ? `${userState.user.firstName} ${userState.user.lastName}` : ""}</p>
+            </div>
+            
         </div>
 
     )
