@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 import React from "react";
 
 export interface IAlert {
@@ -23,24 +23,14 @@ function getAlertCssClass(alert: IAlert) {
 export function Alert(props: Props) {
     let totalTime = props.timeout ? props.timeout : 5000
     let [timeLeft, setTimeLeft] = useState(totalTime)
-    let percentRemaining = Math.round((timeLeft / totalTime) * 100)
-    // useEffect(() => {
-    //     if (props.alert.ok) {
-    //         let timer = setTimeout(
-    //             props.dismissAlert,
-    //             props.timeout ? props.timeout : 5000)
-    //         return function clearTimer() {
-    //             clearTimeout(timer)
-    //         }
-    //     }
-    // })
+    let percentRemaining = Math.round((timeLeft / totalTime) * 100);
 
     useEffect(() => {
         let interval: any
         if (props.alert.ok && timeLeft > 0) {
             interval = setInterval(
-                () => setTimeLeft(timeLeft - 100),
-                100)
+                () => setTimeLeft(timeLeft - 1000),
+                1000)
 
         }
         else if (props.alert.ok && timeLeft <= 0) {
@@ -48,7 +38,7 @@ export function Alert(props: Props) {
             props.dismissAlert()
         }
         return function clear() {
-            
+
             clearInterval(interval)
         }
     })
@@ -61,7 +51,9 @@ export function Alert(props: Props) {
                     className="close"
                     data-dismiss="alert"
                     aria-label="Close"
-                    onClick={props.dismissAlert}
+                    // need to use () => syntax to avoid
+                    // double alerts being closed
+                    onClick={() => props.dismissAlert}
                 ><span aria-hidden="true">&times;</span>
                 </button>
             </div>

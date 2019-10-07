@@ -4,6 +4,6 @@ import thunk from 'redux-thunk'
 
 // this is to use redux devtools in the browser
 // @ts-ignore
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 export const rootStore = createStore(
-    rootReducer,applyMiddleware(thunk))
+    rootReducer,composeEnhancers(applyMiddleware(thunk)))
