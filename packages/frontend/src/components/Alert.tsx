@@ -25,8 +25,10 @@ export function Alert(props: Props) {
     let [timeLeft, setTimeLeft] = useState(totalTime)
     let percentRemaining = Math.round((timeLeft / totalTime) * 100);
 
+    // make interval global-ish so that onClick can use it
+    let interval: any
     useEffect(() => {
-        let interval: any
+
         if (props.alert.ok && timeLeft > 0) {
             interval = setInterval(
                 () => setTimeLeft(timeLeft - 1000),
@@ -53,7 +55,11 @@ export function Alert(props: Props) {
                     aria-label="Close"
                     // need to use () => syntax to avoid
                     // double alerts being closed
-                    onClick={() => props.dismissAlert}
+                    // also need ot clear the interval
+                    onClick={() => {
+                        clearInterval(interval)
+                        props.dismissAlert()
+                    }}
                 ><span aria-hidden="true">&times;</span>
                 </button>
             </div>
