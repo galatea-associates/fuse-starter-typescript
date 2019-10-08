@@ -1,11 +1,12 @@
 import { IAlert } from "../components/Alert"
 import { AlertActionTypes, ADD_ALERT, DISMISS_ALERT } from "../actions/alert"
+import uuid = require("uuid");
 
  export interface IAlertState {
     alerts: IAlert[]
  }
 export function alertReducer(
-    state: IAlert[] = [{ok: false, status: "something went wrong"}, {ok: true, status: "something went right"}],
+    state: IAlert[] = [],
     action: AlertActionTypes){
         switch(action.type) {
             case ADD_ALERT:

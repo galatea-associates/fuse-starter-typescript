@@ -1,4 +1,5 @@
 import { IAlert } from "../components/Alert"
+import uuid = require("uuid");
 
 export const ADD_ALERT = "ADD_ALERT"
 export const DISMISS_ALERT = "DISMISS_ALERT"
@@ -13,10 +14,19 @@ interface IDismissAlert {
     index: number
 }
 
-export function addAlert(payload: IAlert): IAddAlertAction {
+interface IAlertPayload {
+    ok: boolean
+    status: string
+}
+
+export function addAlert(payload: IAlertPayload): IAddAlertAction {
     return {
         type: ADD_ALERT,
-        payload
+        payload: {
+            ok: payload.ok,
+            status: payload.status,
+            uuid: uuid.v4()
+        }
     }
 }
 

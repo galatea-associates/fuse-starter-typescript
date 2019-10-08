@@ -14,7 +14,7 @@ export function AlertContainer() {
                 alerts.map(
                     (alert: IAlert, index: number) =>
                         <Alert
-                            key={index}
+                            key={alert.uuid}
                             alert={alert}
                             dismissAlert={() => dispatch(dismissAlert(index))} />
                 )

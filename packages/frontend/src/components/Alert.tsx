@@ -1,10 +1,13 @@
 import {useEffect, useLayoutEffect, useState} from "react";
 import React from "react";
+import uuid = require("uuid");
 
 export interface IAlert {
     status: string
-    ok: boolean
+    ok: boolean,
+    uuid: string
 }
+
 
 interface Props {
     alert: IAlert,
@@ -51,7 +54,6 @@ export function Alert(props: Props) {
                 <button
                     type="button"
                     className="close"
-                    data-dismiss="alert"
                     aria-label="Close"
                     // need to use () => syntax to avoid
                     // double alerts being closed
