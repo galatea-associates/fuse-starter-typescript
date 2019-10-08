@@ -4,6 +4,7 @@
         "target": "es5",
         "module": "commonjs",
         "jsx": "react",
+        "types": ["jest"],
         "sourceMap": true, 
         "esModuleInterop": true
     }
