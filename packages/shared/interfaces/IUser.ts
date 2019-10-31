@@ -1,4 +1,4 @@
 export interface IUser {
-    firstName: string
-    lastName: string
+  firstName: string
+  lastName: string
 }

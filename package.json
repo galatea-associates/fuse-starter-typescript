@@ -4,7 +4,19 @@
   "devDependencies": {
     "lerna": "^3.16.4"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run standard",
+      "pre-push": "npm run test"
+    }
+  },
   "scripts": {
-    "lerna": "lerna add --dev standard"
+    "test": "lerna exec -- npm run test",
+    "standard": "lerna exec -- npm run standard",
+    "lerna": "lerna exec -- npm uninstall husky",
+    "bootstrap": "lerna bootstrap --hoist --no-ci"
+  },
+  "dependencies": {
+    "husky": "^3.0.9"
   }
 }
