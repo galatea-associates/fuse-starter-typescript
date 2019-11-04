@@ -6,14 +6,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run standard",
+      "pre-commit": "npm standard",
       "pre-push": "npm run test"
     }
   },
   "scripts": {
     "test": "lerna exec -- npm run test",
     "standard": "lerna exec -- npm run standard",
-    "lerna": "lerna exec -- npm uninstall husky",
+    "lerna": "lerna add --dev standard",
     "bootstrap": "lerna bootstrap --hoist --no-ci"
   },
   "dependencies": {
