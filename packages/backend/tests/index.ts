@@ -9,7 +9,7 @@ chai.use(chaiHttp)
 describe('index.ts', function () {
   it('should return a User when requested', function (done) {
     chai.request(app).get('/api/test').end((err, res) => {
-      let user: IUser = {
+      const user: IUser = {
         firstName: 'First',
         lastName: 'Last'
       }

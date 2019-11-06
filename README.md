@@ -59,3 +59,9 @@ To install a npm dependency in only one package run
 To link one of your packages to another run
 
 ```lerna add @fuse-starter-typescript/shared --scope=@fuse-starter-typescript/backend```
+
+### Getting the project to run
+1. Run the Bootstrap command from above
+
+### Husky
+Husky is a module that runs git hooks as defined in the root package.json. It runs the linter and tests.
