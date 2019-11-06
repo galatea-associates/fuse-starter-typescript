@@ -15,9 +15,9 @@ export default function App () {
           </ul>
 
         </nav>
-        <AlertContainer />
+        <AlertContainer/>
         <div className='container mt-2'>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Home}/>
         </div>
 
       </div>

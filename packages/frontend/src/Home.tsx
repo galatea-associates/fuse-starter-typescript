@@ -33,10 +33,11 @@ export function Home () {
   // the [] notation here tells useEffect to run this effect only once to avoid
   // calling the api every time there is an update to the dom
 
+  // todo: look at this ternary
   return (
-    <>
+    <div>
       <p>isFetching: {`${userState.isFetching}`}</p>
       <p>Name: {!userState.isFetching && userState.user ? `${userState.user.firstName} ${userState.user.lastName}` : ''}</p>
-    </>
+    </div>
   )
 }

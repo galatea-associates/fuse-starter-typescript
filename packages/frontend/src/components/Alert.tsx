@@ -39,6 +39,7 @@ export function Alert (props: Props) {
       clearInterval(interval)
       props.dismissAlert()
     }
+    // this is the action that happens when component unmount()
     return function clear () {
       clearInterval(interval)
     }
@@ -71,7 +72,7 @@ export function Alert (props: Props) {
           aria-label='Close'
           // need to use () => syntax to avoid
           // double alerts being closed
-          // also need ot clear the interval
+          // also need to clear the interval
           onClick={() => {
             clearInterval(interval)
             props.dismissAlert()

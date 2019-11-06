@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/index.ts",
     "standard": "standardx **/*.ts --fix",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",

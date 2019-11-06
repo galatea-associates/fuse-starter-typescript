@@ -17,7 +17,7 @@ describe('Home', () => {
     fetchMock.mock('/api/test', { status: 200, body: mockUser })
     mount(
       <Provider store={mockStore}>
-        <Home />
+        <Home/>
       </Provider>
     )
     // give the store a bit of time to receive the action and put it in the store
@@ -37,7 +37,7 @@ describe('Home', () => {
 
     mount(
       <Provider store={mockStore}>
-        <Home />
+        <Home/>
       </Provider>
     )
     // give the store a bit of time to receive the action and put it in the store
@@ -45,6 +45,7 @@ describe('Home', () => {
 
     // now we should have three actions in the store. 1. set_user_fetching, 2. add_alert
     // 3. set_user_fetching
+    // todo: check there's an error message
     expect(mockStore.getActions().length).toEqual(3)
   })
 })
