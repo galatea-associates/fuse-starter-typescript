@@ -1,4 +1,5 @@
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
+import { User } from '@fuse-starter-typescript/shared/models/User'
 
 export const SET_USERS_FETCHING = 'SET_USERS_FETCHING'
 export const RECEIVE_USERS = 'RECEIVE_USERS'
@@ -10,10 +11,10 @@ interface ISetUserFetchingAction {
 
 interface IReceiveUserAction {
     type: typeof RECEIVE_USERS
-    payload: IUser[]
+    payload: User[]
 }
 
-export function receiveUsers(payload: IUser[]): IReceiveUserAction {
+export function receiveUsers(payload: User[]): IReceiveUserAction {
   return {
     type: RECEIVE_USERS,
     payload

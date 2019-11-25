@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from './reducers/rootReducer'
 import { IUsersState } from './reducers/usersReducer'
 import { addAlert } from './actions/alert'
-import { User } from './components/User'
+import { UserComponent } from './components/UserComponent'
+import { User } from '@fuse-starter-typescript/shared/models/User'
 
 export function Home () {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export function Home () {
         return response
       })
       .then(response => response.text())
-      .then(response => JSON.parse(response) as IUser[])
+      .then(response => JSON.parse(response) as User[])
       .then(users => {
         dispatch(addAlert({ ok: true, status: 'Successfully fetched the users' }))
         dispatch(receiveUsers(users))
@@ -41,7 +42,7 @@ export function Home () {
       <React.Fragment>
       {(!userState.isFetching && userState.users) ? userState.users.map(user => {
           console.log('user = ', user)
-          return (<User user={user}/>)
+          return (<UserComponent user={user}/>)
         })
         : ''}
       </React.Fragment>

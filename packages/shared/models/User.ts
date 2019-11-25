@@ -4,7 +4,7 @@ import { Entity, Field, uuid, UUIDField } from '@marcj/marshal'
 @Entity("User")
 export class User implements IUser {
   @UUIDField().asId()
-  id: string = uuid();
+  uuid: string = uuid();
 
   constructor(
     @Field()

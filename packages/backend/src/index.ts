@@ -23,6 +23,16 @@ app.get('/api/users', async function (req, res) {
   res.send(users)
 })
 
+app.get('/api/user/:uuid', async function (req, res) {
+  console.log("received request to /api/user/", req.params.uuid)
+  // ensure we have a DB connection, and seed the database
+  db = await getDatabase()
+
+  // now get all the users
+  let user = await db.get(User, {uuid: req.params.uuid})
+  res.send(user)
+})
+
 app.listen(3000, async function () {
   console.log('Listening on port 3000')
 })
