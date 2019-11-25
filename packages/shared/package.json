@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "standard": "standardx **/*.ts --fix",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo 'no tests for shared library'"
   },
   "keywords": [],
   "author": "",

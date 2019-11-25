@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/index.ts",
     "standard": "standardx **/*.ts --fix",
-    "test": "mocha"
+    "test": "mocha --require ts-node/register tests"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "mongodb-memory-server": "^6.0.1",
     "standard": "^14.3.1",
     "standardx": "^5.0.0",
+    "ts-node": "^8.5.2",
     "typescript": "^3.6.3"
   },
   "dependencies": {
@@ -33,7 +34,6 @@
     "@types/mongodb-memory-server": "^2.3.0",
     "express": "^4.17.1",
     "reflect-metadata": "^0.1.13",
-    "ts-node": "^8.4.1",
     "typeorm": "^0.2.20"
   },
   "eslintConfig": {
