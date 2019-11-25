@@ -17,6 +17,9 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
+    "@marcj/marshal": "^0.10.0",
+    "@marcj/marshal-mongo": "^0.10.0",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^8.4.1"
   },
   "eslintConfig": {

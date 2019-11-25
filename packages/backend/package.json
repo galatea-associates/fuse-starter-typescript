@@ -20,15 +20,21 @@
     "chai-http": "^4.3.0",
     "husky": "^3.0.9",
     "mocha": "^6.2.2",
+    "mongodb-memory-server": "^6.0.1",
     "standard": "^14.3.1",
     "standardx": "^5.0.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
     "@fuse-starter-typescript/shared": "^1.0.0",
+    "@marcj/marshal": "^0.10.0",
+    "@marcj/marshal-mongo": "^0.10.0",
     "@types/express": "^4.17.1",
+    "@types/mongodb-memory-server": "^2.3.0",
     "express": "^4.17.1",
-    "ts-node": "^8.4.1"
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.4.1",
+    "typeorm": "^0.2.20"
   },
   "eslintConfig": {
     "rules": {

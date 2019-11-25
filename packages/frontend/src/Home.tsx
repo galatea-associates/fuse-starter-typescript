@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react'
-import { receiveUser, setUserFetching } from './actions/user'
+import { receiveUsers, setUserFetching } from './actions/user'
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from './reducers/rootReducer'
-import { IUserState } from './reducers/userReducer'
+import { IUsersState } from './reducers/usersReducer'
 import { addAlert } from './actions/alert'
+import { User } from './components/User'
 
 export function Home () {
   const dispatch = useDispatch()
-  const userState: IUserState = useSelector((state: RootState) => state.userState)
+  const userState: IUsersState = useSelector((state: RootState) => state.userState)
   console.log('userState =', userState)
   useEffect(() => {
     dispatch(setUserFetching(true))
-    window.fetch('/api/test')
+    window.fetch('/api/users')
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)
@@ -20,10 +21,10 @@ export function Home () {
         return response
       })
       .then(response => response.text())
-      .then(response => JSON.parse(response) as IUser)
-      .then(user => {
-        dispatch(addAlert({ ok: true, status: 'Successfully fetched the user' }))
-        dispatch(receiveUser(user))
+      .then(response => JSON.parse(response) as IUser[])
+      .then(users => {
+        dispatch(addAlert({ ok: true, status: 'Successfully fetched the users' }))
+        dispatch(receiveUsers(users))
       })
       .catch((error: Error) => {
         dispatch(addAlert({ ok: false, status: error.message }))
@@ -36,8 +37,14 @@ export function Home () {
   // todo: look at this ternary
   return (
     <div>
-      <p>isFetching: {`${userState.isFetching}`}</p>
-      <p>Name: {!userState.isFetching && userState.user ? `${userState.user.firstName} ${userState.user.lastName}` : ''}</p>
+      <h1>Users</h1>
+      <React.Fragment>
+      {(!userState.isFetching && userState.users) ? userState.users.map(user => {
+          console.log('user = ', user)
+          return (<User user={user}/>)
+        })
+        : ''}
+      </React.Fragment>
     </div>
   )
 }

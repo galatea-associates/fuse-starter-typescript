@@ -1,24 +1,24 @@
-import { SET_USER_FETCHING, RECEIVE_USER, UserActionTypes }
+import { SET_USERS_FETCHING, RECEIVE_USERS, UserActionTypes }
   from '../actions/user'
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
-export interface IUserState {
+export interface IUsersState {
     isFetching?: boolean
-    user?: IUser
+    users?: IUser[]
  }
-export function userReducer (
-  state: IUserState = { isFetching: false },
+export function usersReducer (
+  state: IUsersState = { isFetching: false },
   action: UserActionTypes) {
   switch (action.type) {
-    case SET_USER_FETCHING:
+    case SET_USERS_FETCHING:
       return {
         ...state,
         isFetching: action.payload
       }
-    case RECEIVE_USER:
+    case RECEIVE_USERS:
       return {
         ...state,
         isFetching: false,
-        user: action.payload
+        users: action.payload
       }
     default:
       return state

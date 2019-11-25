@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import { userReducer } from './userReducer'
+import { usersReducer } from './usersReducer'
 import { alertReducer } from './alertReducer'
 
 export const rootReducer = combineReducers({
-  userState: userReducer,
+  userState: usersReducer,
   alerts: alertReducer
 })
 
