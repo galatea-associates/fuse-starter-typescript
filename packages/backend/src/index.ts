@@ -6,11 +6,17 @@ import { getUser, getUsers } from './controllers/userController'
 export const app = express()
 
 app.use(express.json())
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./api-documentation.yaml');
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+try{
+  const swaggerUi = require('swagger-ui-express')
+  const YAML = require('yamljs')
+  const swaggerDocument = YAML.load('./api-documentation.yaml')
+  app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+}
+catch {
+  console.log("something went wrong with loading documentation, but will not fail")
+}
+
 
 
 app.get('/api/users', getUsers)

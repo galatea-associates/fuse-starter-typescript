@@ -4,6 +4,7 @@
     "esModuleInterop": true,
     "types": [
       "mocha"
-    ]
+    ],
+    "target": "es5"
   }
 }
