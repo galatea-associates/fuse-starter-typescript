@@ -6,6 +6,12 @@ import { getUser, getUsers } from './controllers/userController'
 export const app = express()
 
 app.use(express.json())
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./api-documentation.yaml');
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 app.get('/api/users', getUsers)
 
