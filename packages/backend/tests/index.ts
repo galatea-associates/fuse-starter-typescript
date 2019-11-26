@@ -30,6 +30,14 @@ describe('controllers/userController.ts', async function () {
 
       })
     })
+    doc.action('Get User by UUID').is(async function (doc:any) {
+      it('should return a user by uuid', async function () {
+        const res1 = await requester.get('/api/users')
+        const uuid = res1.body[0].uuid
+        const res2 = await requester.get(doc.get(`/api/user/:uuid`,  { uuid: doc.val(uuid, 'UUID')}))
+        doc.resBody(res2.body)
+      })
+    })
   })
   after(async function() {
     await shutdownMongo()
