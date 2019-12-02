@@ -1,13 +1,10 @@
 import { Database } from '@marcj/marshal-mongo'
 import { Connection, createConnection } from 'typeorm'
 import { MongoMemoryServer } from 'mongodb-memory-server'
-import config from 'config'
 
 let mongoMemoryServer: MongoMemoryServer
 let connection: Connection
 let database: Database
-
-let mongoUrl:string = config.get("MONGO_URL")
 
 export async function getDatabase(): Promise<Database> {
   // if (!mongoMemoryServer){
@@ -18,9 +15,9 @@ export async function getDatabase(): Promise<Database> {
   if (!database) {
     connection = await createConnection({
       type: 'mongodb',
-      url: mongoUrl
+      url: process.env.MONGO_URL
     })
-    database = new Database(connection, config.get("MONGO_COLLECTION_NAME"))
+    database = new Database(connection, process.env.MONGO_COLLECTION_NAME)
   }
 
   return database

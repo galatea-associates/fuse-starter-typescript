@@ -2,7 +2,7 @@ const path = require('path')
 const outputDirectory = '/dist'
 const webpack = require('webpack')
 const fs = require('fs')
-const CopyPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 
 module.exports = {
@@ -34,8 +34,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyPlugin([
-      {from: "config", to: "config"}
-    ])
+    new Dotenv({
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+    })
   ]
 }

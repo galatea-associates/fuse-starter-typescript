@@ -7,6 +7,9 @@ const serverless = require('serverless-http')
 
 export const app = express()
 
+require('dotenv').config()
+
+
 app.use(express.json())
 
 try{

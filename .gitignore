@@ -9,3 +9,5 @@ packages/*/lib
 *.js.map
 
 *.js
+
+*.env
