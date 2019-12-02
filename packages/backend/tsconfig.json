@@ -5,6 +5,7 @@
     "types": [
       "mocha"
     ],
-    "target": "es5"
+    "declaration": false,
+    "target": "es6"
   }
 }
