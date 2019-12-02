@@ -1,5 +1,6 @@
 {
   "MONGO_URL": "mongodb://localhost:27017",
   "MONGO_COLLECTION": "fuse-start-typescript-default",
-  "USE_MONGO_MEMORY_SERVER": false
+  "USE_MONGO_MEMORY_SERVER": false,
+  "IS_SERVERLESS": false
 }
