@@ -1,5 +1,5 @@
 {
   "MONGO_URL": "PASS_THROUGH_ENV_VARIABLE",
-  "MONGO_COLLECTION": "fuse-start-typescript-production",
+  "MONGO_COLLECTION_NAME": "fuse-start-typescript-production",
   "IS_SERVERLESS": true
 }
