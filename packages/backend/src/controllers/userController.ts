@@ -1,4 +1,4 @@
-import { getDatabase } from '../mongo'
+import { getDatabase } from '../db/mongo'
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { User } from '@fuse-starter-typescript/shared/models/User'
 import { Request, Response } from 'express'
@@ -7,7 +7,9 @@ export async function getUsers(req: Request, res: Response) {
   // ensure we have a DB connection, and seed the database
   // todo: move seeding to another place, but for now
   let db = await getDatabase()
-  const user: IUser = new User('Mike', 'Gajda')
+  const user: IUser = new User()
+  user.firstName = "Mike"
+  user.lastName = "Gajda"
   await db.add(User, user)
 
   // now get all the users

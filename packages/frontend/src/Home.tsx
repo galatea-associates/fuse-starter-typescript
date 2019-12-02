@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { receiveUsers, setUserFetching } from './actions/user'
-import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from './reducers/rootReducer'
 import { IUsersState } from './reducers/usersReducer'
@@ -14,7 +13,7 @@ export function Home () {
   console.log('userState =', userState)
   useEffect(() => {
     dispatch(setUserFetching(true))
-    window.fetch('/api/users')
+    window.fetch(`${process.env.BACKEND_PATH}/api/users`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)

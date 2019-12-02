@@ -3,6 +3,7 @@ const outputDirectory = '/dist'
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fs = require('fs')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: {
@@ -58,6 +59,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
+    }),
+    new Dotenv({
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
     })
   ]
 }

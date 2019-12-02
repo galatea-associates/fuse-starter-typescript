@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --mode development --devtool inline-source-map --hot --watch --display verbose",
+    "build": "webpack",
     "standard": "standardx --fix **/*.ts **/*.tsx --env jest",
     "build": "webpack",
     "test": "tsc && jest"
@@ -22,6 +23,7 @@
     "@typescript-eslint/parser": "^2.5.0",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.2.0",
+    "dotenv-webpack": "^1.7.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.2",
