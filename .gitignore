@@ -7,3 +7,5 @@ packages/*/lib
 *.js.map
 
 *.js
+
+packages/frontend/dist

@@ -6,6 +6,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --mode development --devtool inline-source-map --hot --watch --display verbose",
     "standard": "standardx --fix **/*.ts **/*.tsx --env jest",
+    "build": "webpack",
     "test": "tsc && jest"
   },
   "keywords": [],
