@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { receiveUsers, setUserFetching } from './actions/user'
+import { useParams } from 'react-router-dom'
 import { User } from '@fuse-starter-typescript/shared/models/User'
 import { addAlert } from './actions/alert'
 import { useDispatch } from 'react-redux'
 import { UserComponent } from './components/UserComponent'
-
-
 
 export function UserContainer () {
   let [user, setUserState] = useState()
   let { uuid } = useParams();
   const dispatch = useDispatch()
   useEffect(() => {
-    window.fetch(`/api/user/${uuid}`)
+    window.fetch(`${process.env.BACKEND_PATH}/api/user/${uuid}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)
