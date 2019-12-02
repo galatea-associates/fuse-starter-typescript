@@ -18,10 +18,10 @@ module.exports = {
     publicPath: '/',
     libraryTarget: "commonjs2"
   },
-  node: {
-    global: true,
-    fs: 'empty'
-  },
+  // node: {
+  //   global: true,
+  //   fs: 'empty'
+  // },
   target: 'node',
   module: {
     rules: [
