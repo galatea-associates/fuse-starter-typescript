@@ -49,6 +49,5 @@ if (process.env.START_SERVER == 'true') {
   })
 }
 
-
 module.exports = app
 module.exports.handler = serverless(app)
