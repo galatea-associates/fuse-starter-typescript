@@ -1,6 +1,6 @@
 import express from 'express'
 import 'reflect-metadata'
-import { shutdownMongo } from './mongo'
+import { shutdownMongo } from './db/mongo'
 import { getUser, getUsers } from './controllers/userController'
 
 const serverless = require('serverless-http')
