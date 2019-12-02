@@ -38,14 +38,14 @@ app.use("/", router)
 // special for netlify functions, point /.netlify/functions at the router
 app.use('/.netlify/functions/index', router)  // route to netlify lambda
 
-app.listen(3000, async function () {
-  console.log('Listening on port 3000')
-})
+// app.listen(3000, async function () {
+//   console.log('Listening on port 3000')
+// })
 
-process.on('exit', async function () {
-  console.log('index.ts received exit event')
-  await shutdownMongo()
-})
+// process.on('exit', async function () {
+//   console.log('index.ts received exit event')
+//   await shutdownMongo()
+// })
 
 module.exports = app
 module.exports.handler = serverless(app)
