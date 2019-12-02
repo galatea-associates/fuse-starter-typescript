@@ -1,0 +1,4 @@
+{
+  "MONGO_URL": "PASS_THROUGH_ENV_VARIABLE",
+  "MONGO_COLLECTION": "fuse-start-typescript-production"
+}

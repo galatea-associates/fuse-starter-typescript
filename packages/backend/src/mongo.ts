@@ -2,26 +2,24 @@ import { Database } from '@marcj/marshal-mongo'
 import { Connection, createConnection } from 'typeorm'
 import { MongoMemoryServer } from 'mongodb-memory-server'
 
+const config = require("config")
 
 let mongoMemoryServer: MongoMemoryServer
 let connection: Connection
 let database: Database
 
 export async function getDatabase(): Promise<Database> {
-  if (!mongoMemoryServer){
-    mongoMemoryServer = new MongoMemoryServer()
-    await mongoMemoryServer.getInstanceInfo()
-    console.log("started a db connection")
-  }
+  // if (!mongoMemoryServer){
+  //   mongoMemoryServer = new MongoMemoryServer()
+  //   await mongoMemoryServer.getInstanceInfo()
+  //   console.log("started a db connection")
+  // }
   if (!database) {
     connection = await createConnection({
       type: 'mongodb',
-      host: 'localhost',
-      port: await mongoMemoryServer.getPort(),
-      database: 'testing',
-      useNewUrlParser: true
+      url: config.get("MONGO_URL")
     })
-    database = new Database(connection, 'testing')
+    database = new Database(connection, config.get("MONGO_COLLECTION_NAME"))
   }
 
   return database
