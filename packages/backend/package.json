@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/index.ts",
     "standard": "standardx **/*.ts --fix",
-    "build": "tsc && netlify-lambda build src",
+    "build": "npm i lerna && lerna bootstrap --no-ci && tsc && netlify-lambda build src",
     "test": "mocha --require ts-node/register tests"
   },
   "keywords": [],
