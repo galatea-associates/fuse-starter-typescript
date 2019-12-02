@@ -1,9 +1,9 @@
 import { app } from '../src'
 import { expect } from 'chai'
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
+import { shutdownMongo } from '../src/db/mongo'
 import chai = require('chai')
 import chaiHttp = require('chai-http')
-import { shutdownMongo } from '../src/db/mongo'
 
 chai.use(chaiHttp)
 
