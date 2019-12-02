@@ -6,6 +6,6 @@
       "mocha"
     ],
     "declaration": false,
-    "target": "es5"
+    "target": "es6"
   }
 }
