@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/index.ts",
     "standard": "standardx **/*.ts --fix",
-    "build": "tsc",
+    "build": "tsc && netlify-lambda build src",
     "test": "mocha --require ts-node/register tests"
   },
   "keywords": [],
@@ -39,6 +39,7 @@
     "@types/swagger-ui-express": "^4.1.0",
     "config": "^3.2.4",
     "express": "^4.17.1",
+    "netlify-lambda": "^1.6.3",
     "reflect-metadata": "^0.1.13",
     "serverless-http": "^2.3.0",
     "swagger-ui-express": "^4.1.2",
