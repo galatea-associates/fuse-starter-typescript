@@ -1,0 +1,2 @@
+[build]
+  command = "npm i -g lerna && lerna bootstrap --no-ci && npm run build"
