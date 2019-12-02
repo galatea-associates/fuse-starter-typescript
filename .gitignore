@@ -11,3 +11,4 @@ packages/*/lib
 *.js
 
 *.env
+packages/frontend/dist
