@@ -9,6 +9,9 @@ export const app = express()
 
 require('dotenv').config()
 
+console.log("node version is next")
+console.log(process.version);
+
 
 app.use(express.json())
 
