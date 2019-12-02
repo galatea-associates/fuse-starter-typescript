@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/index.ts",
     "standard": "standardx **/*.ts --fix",
-    "build": "tsc && netlify-lambda build src",
+    "build": "webpack",
     "test": "mocha --require ts-node/register tests"
   },
   "keywords": [],
@@ -17,8 +17,10 @@
     "@types/mocha": "^5.2.7",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
     "@typescript-eslint/parser": "^2.5.0",
+    "awesome-typescript-loader": "^5.2.1",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "copy-webpack-plugin": "^5.0.5",
     "husky": "^3.0.9",
     "lerna": "^3.19.0",
     "mocha": "^6.2.2",
@@ -26,7 +28,8 @@
     "standard": "^14.3.1",
     "standardx": "^5.0.0",
     "ts-node": "^8.5.2",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.2"
   },
   "dependencies": {
     "@fuse-starter-typescript/shared": "^1.0.0",
@@ -39,12 +42,14 @@
     "@types/swagger-ui-express": "^4.1.0",
     "config": "^3.2.4",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "netlify-lambda": "^1.6.3",
     "reflect-metadata": "^0.1.13",
     "serverless-http": "^2.3.0",
     "swagger-ui-express": "^4.1.2",
     "symbol-description": "1.0.0",
     "test2doc": "^0.3.5",
+    "tls": "0.0.1",
     "typeorm": "^0.2.20",
     "yamljs": "^0.3.0"
   },
