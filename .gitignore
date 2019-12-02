@@ -3,6 +3,8 @@ lerna-debug.log
 npm-debug.log
 packages/*/lib
 
+!packages/*/webpack.config.js
+
 *.d.ts
 *.js.map
 
