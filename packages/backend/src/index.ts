@@ -35,7 +35,6 @@ app.use("/", router)
 // special for netlify functions, point /.netlify/functions at the router
 app.use('/.netlify/functions/index', router)  // route to netlify lambda
 
-
 app.listen(3000, async function () {
   console.log('Listening on port 3000')
 })
