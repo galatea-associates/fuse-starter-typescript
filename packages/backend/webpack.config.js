@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'test-[name].js',
+    filename: '[name].js',
     publicPath: '/',
     libraryTarget: 'commonjs2'
   },
