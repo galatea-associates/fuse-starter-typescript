@@ -4,7 +4,6 @@ const webpack = require('webpack')
 const fs = require('fs')
 const Dotenv = require('dotenv-webpack')
 
-
 module.exports = {
   entry: {
     index: ['./src/index.ts']
@@ -16,7 +15,7 @@ module.exports = {
     path: path.join(__dirname, outputDirectory),
     filename: '[name].js',
     publicPath: '/',
-    libraryTarget: "commonjs2"
+    libraryTarget: 'commonjs2'
   },
   // node: {
   //   global: true,
