@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import 'reflect-metadata'
 import { getUser, getUsers } from './controllers/userController'
 import { shutdownMongo } from './db/mongo'
@@ -31,6 +31,9 @@ let wrapper = (fn:any) => (...args:any[]) => fn(...args).catch(args[2])
 
 // set up the routes
 let router = express.Router()
+router.get("/", function(req: Request, res: Response){
+  res.send("Hello world")
+})
 router.get('/api/users', wrapper(getUsers))
 router.get('/api/user/:uuid', wrapper(getUser))
 
