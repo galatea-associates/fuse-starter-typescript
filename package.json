@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.16.4"
+    "lerna": "^3.19.0"
   },
   "husky": {
     "hooks": {
@@ -17,6 +17,8 @@
     "bootstrap": "lerna bootstrap --hoist --no-ci"
   },
   "dependencies": {
+    "@marcj/marshal": "^0.10.0",
+    "@marcj/marshal-mongo": "^0.10.0",
     "husky": "^3.0.9"
   }
 }
