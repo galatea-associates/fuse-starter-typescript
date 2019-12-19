@@ -15,7 +15,7 @@ describe('Home', () => {
       lastName: 'testLast'
     }
     fetchMock.reset()
-    fetchMock.mock('/api/users', { status: 200, body: [mockUser] })
+    fetchMock.mock(`${process.env.BACKEND_PATH || ''}/api/users`, { status: 200, body: [mockUser] })
     mount(
       <Provider store={mockStore}>
         <Home />
@@ -31,7 +31,7 @@ describe('Home', () => {
 
   it('Renders an alert when something goes wrong', async () => {
     fetchMock.reset()
-    fetchMock.mock('/api/users', { status: 500 })
+    fetchMock.mock(`${process.env.BACKEND_PATH || ''}/api/users`, { status: 500 })
 
     // clear the actions at the beginning of the test
     mockStore.clearActions()
