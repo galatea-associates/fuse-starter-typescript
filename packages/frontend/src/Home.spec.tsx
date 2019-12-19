@@ -4,7 +4,7 @@ import { Home } from './Home'
 import { mockStore } from './__tests__/fixtures'
 import { Provider } from 'react-redux'
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
-import { sleep } from '@fuse-starter-typescript/shared/sleep'
+import { sleep } from './sleep'
 import fetchMock = require('fetch-mock')
 
 describe('Home', () => {
