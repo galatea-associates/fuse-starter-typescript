@@ -1,10 +1,10 @@
-import { app } from '../src'
 import { expect } from 'chai'
 import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { shutdownMongo } from '../src/db/mongo'
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import chai = require('chai')
 import chaiHttp = require('chai-http')
+import app from '../src/app'
 
 chai.use(chaiHttp)
 
