@@ -15,6 +15,7 @@ module.exports = {
     path: path.join(__dirname, outputDirectory),
     filename: '[name].js',
     publicPath: '/',
+    libraryTarget: 'commonjs2'
   },
   // node: {
   //   global: true,
