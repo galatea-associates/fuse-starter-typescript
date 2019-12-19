@@ -34,6 +34,11 @@ let router = express.Router()
 router.get("/", function(req: Request, res: Response){
   res.send("Hello world")
 })
+
+router.get("/test", function(req: Request, res: Response){
+  res.send("Hello world")
+})
+
 router.get('/api/users', wrapper(getUsers))
 router.get('/api/user/:uuid', wrapper(getUser))
 
