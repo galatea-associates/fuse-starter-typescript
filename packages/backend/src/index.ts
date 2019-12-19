@@ -17,7 +17,7 @@ console.log(process.version)
 app.use(express.json())
 
 app.use(cors({
-  origin: ["https://localhost:8000", "https://fuse-starter-typescript-frontend.netlify.com/"]
+  origin: ["https://localhost:8000", "https://fuse-starter-typescript-frontend.netlify.com"]
 }))
 
 // try{
@@ -37,14 +37,9 @@ const wrapper = (fn:any) => (...args:any[]) => fn(...args).catch(args[2])
 
 // set up the routes
 const router = express.Router()
-router.get('/', function (req: Request, res: Response) {
-  res.send('Hello world')
+router.get('/health', function (req: Request, res: Response) {
+  res.send('up')
 })
-
-router.get('/test', function (req: Request, res: Response) {
-  res.send('Hello world')
-})
-
 router.get('/api/users', wrapper(getUsers))
 router.get('/api/user/:uuid', wrapper(getUser))
 
@@ -55,7 +50,7 @@ app.use('/', router)
 app.use('/.netlify/functions/index', router) // route to netlify lambda
 
 if (process.env.START_SERVER === 'true') {
-  app.listen(3000, async function () {
+  app.listen(process.env.SERVER_PORT , async function () {
     console.log('Listening on port 3000')
   })
 
