@@ -3,6 +3,7 @@ const outputDirectory = '/dist'
 const webpack = require('webpack')
 const fs = require('fs')
 const Dotenv = require('dotenv-webpack')
+const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -36,6 +37,9 @@ module.exports = {
   plugins: [
     new Dotenv({
       systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
-    })
+    }),
+    new CopyPlugin([
+      {from: './api-documentation.yaml'}
+    ])
   ]
 }
