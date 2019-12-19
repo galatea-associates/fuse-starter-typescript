@@ -1,4 +1,3 @@
-import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { User } from '@fuse-starter-typescript/shared/models/User'
 
 export const SET_USERS_FETCHING = 'SET_USERS_FETCHING'
@@ -14,7 +13,7 @@ interface IReceiveUserAction {
     payload: User[]
 }
 
-export function receiveUsers(payload: User[]): IReceiveUserAction {
+export function receiveUsers (payload: User[]): IReceiveUserAction {
   return {
     type: RECEIVE_USERS,
     payload

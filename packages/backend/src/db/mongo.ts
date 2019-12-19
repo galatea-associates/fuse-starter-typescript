@@ -6,7 +6,7 @@ let mongoMemoryServer: MongoMemoryServer
 let connection: Connection
 let database: Database
 
-export async function getDatabase(): Promise<Database> {
+export async function getDatabase (): Promise<Database> {
   // if (!mongoMemoryServer){
   //   mongoMemoryServer = new MongoMemoryServer()
   //   await mongoMemoryServer.getInstanceInfo()
@@ -22,12 +22,12 @@ export async function getDatabase(): Promise<Database> {
 
   return database
 }
-export async function shutdownMongo(){
-  console.log("in mongo.ts shutdown()")
-  if (connection){
+export async function shutdownMongo () {
+  console.log('in mongo.ts shutdown()')
+  if (connection) {
     await connection.close()
   }
-  if (mongoMemoryServer){
+  if (mongoMemoryServer) {
     await mongoMemoryServer.stop()
   }
 }

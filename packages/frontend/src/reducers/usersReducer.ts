@@ -1,7 +1,6 @@
-import { SET_USERS_FETCHING, RECEIVE_USERS, UserActionTypes }
-  from '../actions/user'
-import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
+import { RECEIVE_USERS, SET_USERS_FETCHING, UserActionTypes } from '../actions/user'
 import { User } from '@fuse-starter-typescript/shared/models/User'
+
 export interface IUsersState {
     isFetching?: boolean
     users?: User[]

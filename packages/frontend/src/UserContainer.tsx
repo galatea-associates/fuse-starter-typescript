@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 import { UserComponent } from './components/UserComponent'
 
 export function UserContainer () {
-  let [user, setUserState] = useState()
-  let { uuid } = useParams();
+  const [user, setUserState] = useState()
+  const { uuid } = useParams()
   const dispatch = useDispatch()
   useEffect(() => {
     window.fetch(`${process.env.BACKEND_PATH}/api/user/${uuid}`)
@@ -30,7 +30,7 @@ export function UserContainer () {
 
   return (
     <div>
-      {user ? <UserComponent user={user}/> : "loading"}
+      {user ? <UserComponent user={user} /> : 'loading'}
     </div>
 
   )

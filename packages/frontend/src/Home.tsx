@@ -38,13 +38,13 @@ export function Home () {
   return (
     <div>
       <h1>Users</h1>
-      <React.Fragment>
-      {(!userState.isFetching && userState.users) ? userState.users.map(user => {
+      <>
+        {(!userState.isFetching && userState.users) ? userState.users.map((user, index) => {
           console.log('user = ', user)
-          return (<UserComponent user={user}/>)
+          return (<UserComponent key={index} user={user} />)
         })
-        : ''}
-      </React.Fragment>
+          : ''}
+      </>
     </div>
   )
 }

@@ -13,15 +13,15 @@ export default function App () {
         <nav className='navbar navbar-expand-lg navbar-light r-auto bg-light'>
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item'>
-              <a href={"/"}>Fuse Starter TypeScript</a>
+              <a href='/'>Fuse Starter TypeScript</a>
             </li>
           </ul>
         </nav>
-        <AlertContainer/>
+        <AlertContainer />
         <div className='container mt-2'>
           <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/user/:uuid' children={<UserContainer/>}/>
+            <Route exact path='/' component={Home} />
+            <Route path='/user/:uuid' children={<UserContainer />} />
           </Switch>
         </div>
       </div>

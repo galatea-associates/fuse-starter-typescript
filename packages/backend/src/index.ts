@@ -9,8 +9,8 @@ export const app = express()
 
 require('dotenv').config()
 
-console.log("node version is next")
-console.log(process.version);
+console.log('node version is next')
+console.log(process.version)
 
 app.use(express.json())
 
@@ -27,28 +27,28 @@ app.use(express.json())
 // this async wrapper allows us to make an async call, then catch any async errors with the .catch() block
 // this will handle any "Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)"
 // errors
-let wrapper = (fn:any) => (...args:any[]) => fn(...args).catch(args[2])
+const wrapper = (fn:any) => (...args:any[]) => fn(...args).catch(args[2])
 
 // set up the routes
-let router = express.Router()
-router.get("/", function(req: Request, res: Response){
-  res.send("Hello world")
+const router = express.Router()
+router.get('/', function (req: Request, res: Response) {
+  res.send('Hello world')
 })
 
-router.get("/test", function(req: Request, res: Response){
-  res.send("Hello world")
+router.get('/test', function (req: Request, res: Response) {
+  res.send('Hello world')
 })
 
 router.get('/api/users', wrapper(getUsers))
 router.get('/api/user/:uuid', wrapper(getUser))
 
 // point the base route at the router
-app.use("/", router)
+app.use('/', router)
 
 // special for netlify functions, point /.netlify/functions at the router
-app.use('/.netlify/functions/index', router)  // route to netlify lambda
+app.use('/.netlify/functions/index', router) // route to netlify lambda
 
-if (process.env.START_SERVER == 'true') {
+if (process.env.START_SERVER === 'true') {
   app.listen(3000, async function () {
     console.log('Listening on port 3000')
   })

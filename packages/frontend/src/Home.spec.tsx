@@ -17,7 +17,7 @@ describe('Home', () => {
     fetchMock.mock('/api/test', { status: 200, body: mockUser })
     mount(
       <Provider store={mockStore}>
-        <Home/>
+        <Home />
       </Provider>
     )
     // give the store a bit of time to receive the action and put it in the store
@@ -37,7 +37,7 @@ describe('Home', () => {
 
     mount(
       <Provider store={mockStore}>
-        <Home/>
+        <Home />
       </Provider>
     )
     // give the store a bit of time to receive the action and put it in the store
