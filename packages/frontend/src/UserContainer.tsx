@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { User } from '@fuse-starter-typescript/shared/models/User'
+import { User } from '../backend/src/models/User'
 import { addAlert } from './actions/alert'
 import { useDispatch } from 'react-redux'
 import { UserComponent } from './components/UserComponent'

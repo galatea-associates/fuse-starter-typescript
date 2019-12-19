@@ -5,7 +5,7 @@ import { RootState } from './reducers/rootReducer'
 import { IUsersState } from './reducers/usersReducer'
 import { addAlert } from './actions/alert'
 import { UserComponent } from './components/UserComponent'
-import { User } from '@fuse-starter-typescript/shared/models/User'
+import { User } from '../backend/src/models/User'
 
 export function Home () {
   const dispatch = useDispatch()

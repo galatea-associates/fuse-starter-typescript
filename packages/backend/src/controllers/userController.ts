@@ -1,5 +1,5 @@
 import { getDatabase } from '../db/mongo'
-import { User } from '@fuse-starter-typescript/shared/models/User'
+import { User } from '../models/User'
 import { Request, Response } from 'express'
 
 export async function getUsers (req: Request, res: Response) {

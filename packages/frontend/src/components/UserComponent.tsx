@@ -1,5 +1,5 @@
 import React from 'react'
-import { User } from '@fuse-starter-typescript/shared/models/User'
+import { User } from '../backend/src/models/User'
 import { Link } from 'react-router-dom'
 
 interface Props {

@@ -1,4 +1,4 @@
-import { IUser } from '../interfaces/IUser'
+import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 import { Entity, Field, uuid, UUIDField } from '@marcj/marshal'
 
 @Entity('User')
