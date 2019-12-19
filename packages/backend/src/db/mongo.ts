@@ -7,11 +7,7 @@ let connection: Connection
 let database: Database
 
 export async function getDatabase (): Promise<Database> {
-  // if (!mongoMemoryServer){
-  //   mongoMemoryServer = new MongoMemoryServer()
-  //   await mongoMemoryServer.getInstanceInfo()
-  //   console.log("started a db connection")
-  // }
+
   if (!database) {
     connection = await createConnection({
       type: 'mongodb',
