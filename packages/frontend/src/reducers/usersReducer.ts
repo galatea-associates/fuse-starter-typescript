@@ -1,9 +1,9 @@
 import { RECEIVE_USERS, SET_USERS_FETCHING, UserActionTypes } from '../actions/user'
-import { User } from '../backend/src/models/User'
+import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 
 export interface IUsersState {
     isFetching?: boolean
-    users?: User[]
+    users?: IUser[]
  }
 export function usersReducer (
   state: IUsersState = { isFetching: false },
