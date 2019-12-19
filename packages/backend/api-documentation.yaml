@@ -5,16 +5,56 @@ info:
 paths:
   /api/users:
     get:
-      responses: {}
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                uuid:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+          examples:
+            application/json:
+              - uuid: c36c7f4f-4560-4aa6-ba8a-294ef484e7c4
+                firstName: Mike
+                lastName: Gajda
       tags:
         - Users
       summary: Get all Users
-  /:
-    '':
-      responses: {}
+  '/api/user/{uuid}':
+    get:
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+            properties:
+              uuid:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+          examples:
+            application/json:
+              uuid: c36c7f4f-4560-4aa6-ba8a-294ef484e7c4
+              firstName: Mike
+              lastName: Gajda
       tags:
         - Users
       summary: Get User by UUID
+      parameters:
+        - type: string
+          description: uuid of this user
+          name: uuid
+          in: path
+          required: true
 tags:
   - name: Users
     description: Users controller
