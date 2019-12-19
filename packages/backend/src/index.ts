@@ -17,7 +17,7 @@ console.log(process.version)
 app.use(express.json())
 
 app.use(cors({
-  origin: ["https://localhost:8000", "https://fuse-starter-typescript-frontend.netlify.com"]
+  origin: ["https://fuse-starter-typescript-frontend.netlify.com"]
 }))
 
 // try{
