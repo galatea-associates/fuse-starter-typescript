@@ -24,6 +24,8 @@ try{
   const YAML = require('yamljs')
   const swaggerDocument = YAML.load('./api-documentation.yaml')
   app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  // need to duplicate this to make the documentation available to the .netlify endpoint
+  app.use('/.netlify/functions/index/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 }
 catch {
   console.log("something went wrong with loading documentation, but will not fail")
