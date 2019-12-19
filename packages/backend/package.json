@@ -7,7 +7,7 @@
     "start": "node -r ts-node/register src/index.ts",
     "start-serverless": "node dist/index.js",
     "standard": "standardx **/*.ts --fix",
-    "build": "webpack",
+    "build": "webpack-cli",
     "test": "mocha --require ts-node/register tests"
   },
   "keywords": [],

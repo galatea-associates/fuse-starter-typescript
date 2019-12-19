@@ -19,6 +19,7 @@ describe('controllers/userController.ts', async function () {
       it('should return a list of Users when requested', async function () {
         const res = await requester.get(doc.get('/api/users'))
         const user: IUser = {
+          uuid: 'test',
           firstName: 'Mike',
           lastName: 'Gajda'
         }
