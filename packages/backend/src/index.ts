@@ -16,9 +16,8 @@ console.log(process.version)
 
 app.use(express.json())
 
-app.use(cors({
-  origin: ["https://fuse-starter-typescript-frontend.netlify.com"]
-}))
+// todo: limit this to just a few domains, but for ease of use leave wide open for now
+app.use(cors())
 
 // try{
 //   const swaggerUi = require('swagger-ui-express')
