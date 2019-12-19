@@ -3,6 +3,8 @@ import 'reflect-metadata'
 import { getUser, getUsers } from './controllers/userController'
 import { shutdownMongo } from './db/mongo'
 
+const cors = require('cors')
+
 const serverless = require('serverless-http')
 
 export const app = express()
@@ -13,6 +15,8 @@ console.log('node version is next')
 console.log(process.version)
 
 app.use(express.json())
+
+app.use(cors())
 
 // try{
 //   const swaggerUi = require('swagger-ui-express')
