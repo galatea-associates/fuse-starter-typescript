@@ -10,6 +10,7 @@ import fetchMock = require('fetch-mock')
 describe('Home', () => {
   it('Can renders a user when the backend is working', async () => {
     const mockUser: IUser = {
+      uuid: '123',
       firstName: 'testFirst',
       lastName: 'testLast'
     }

@@ -1,9 +1,9 @@
 import React from 'react'
-import { User } from '../backend/src/models/User'
 import { Link } from 'react-router-dom'
+import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 
 interface Props {
-  user: User,
+  user: IUser,
 }
 
 export function UserComponent (props:Props) {

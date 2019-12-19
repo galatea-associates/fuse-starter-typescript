@@ -5,7 +5,7 @@ import { RootState } from './reducers/rootReducer'
 import { IUsersState } from './reducers/usersReducer'
 import { addAlert } from './actions/alert'
 import { UserComponent } from './components/UserComponent'
-import { User } from '../backend/src/models/User'
+import { IUser } from '@fuse-starter-typescript/shared/interfaces/IUser'
 
 export function Home () {
   const dispatch = useDispatch()
@@ -21,7 +21,7 @@ export function Home () {
         return response
       })
       .then(response => response.text())
-      .then(response => JSON.parse(response) as User[])
+      .then(response => JSON.parse(response) as IUser[])
       .then(users => {
         dispatch(addAlert({ ok: true, status: 'Successfully fetched the users' }))
         dispatch(receiveUsers(users))
