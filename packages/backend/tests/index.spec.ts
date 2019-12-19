@@ -20,13 +20,12 @@ let userLastName = "Gajda"
 describe('controllers/userController.ts', async function () {
   before(async function () {
     // 1. we need to start a mongo memory server so that we don't have outside dependency on Mongo being up
-    console.log("will start mongoMemoryServer")
     mongoMemoryServer = new MongoMemoryServer()
     let mongoUrl = await mongoMemoryServer.getUri()
+    console.log("started mongoMemoryServer()")
     // 2. we need to set the mongo url so that the app can connect to it
 
     process.env.MONGO_URL = mongoUrl
-    console.log('started a db connection')
 
     // 3. now we need to seed the DB with a fake user
     const db = await getDatabase()
@@ -61,6 +60,7 @@ describe('controllers/userController.ts', async function () {
   after(async function () {
     if (mongoMemoryServer) {
       await mongoMemoryServer.stop()
+      console.log("shutdown mongoMemoryServer()")
     }
     await shutdownMongo()
     requester.close()

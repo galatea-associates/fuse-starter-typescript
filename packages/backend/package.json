@@ -8,7 +8,7 @@
     "start-serverless": "node dist/index.js",
     "standard": "standardx **/*.ts --fix",
     "build": "webpack-cli",
-    "test": "mocha --require ts-node/register tests"
+    "test": "mocha --require ts-node/register tests/**.spec.ts"
   },
   "keywords": [],
   "author": "",

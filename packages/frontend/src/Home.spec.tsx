@@ -15,7 +15,7 @@ describe('Home', () => {
       lastName: 'testLast'
     }
     fetchMock.reset()
-    fetchMock.mock('/api/test', { status: 200, body: mockUser })
+    fetchMock.mock('/api/users', { status: 200, body: [mockUser] })
     mount(
       <Provider store={mockStore}>
         <Home />
@@ -29,9 +29,9 @@ describe('Home', () => {
     expect(mockStore.getActions().length).toEqual(3)
   })
 
-  it('Can renders an alert when something goes wrong', async () => {
+  it('Renders an alert when something goes wrong', async () => {
     fetchMock.reset()
-    fetchMock.mock('/api/test', { status: 500 })
+    fetchMock.mock('/api/users', { status: 500 })
 
     // clear the actions at the beginning of the test
     mockStore.clearActions()

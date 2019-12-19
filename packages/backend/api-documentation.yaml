@@ -21,7 +21,7 @@ paths:
                   type: string
           examples:
             application/json:
-              - uuid: c36c7f4f-4560-4aa6-ba8a-294ef484e7c4
+              - uuid: 38115282-3d12-4d20-87d2-60c1611e699c
                 firstName: Mike
                 lastName: Gajda
       tags:
@@ -43,7 +43,7 @@ paths:
                 type: string
           examples:
             application/json:
-              uuid: c36c7f4f-4560-4aa6-ba8a-294ef484e7c4
+              uuid: 38115282-3d12-4d20-87d2-60c1611e699c
               firstName: Mike
               lastName: Gajda
       tags:

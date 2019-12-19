@@ -13,7 +13,7 @@ export function Home () {
   console.log('userState =', userState)
   useEffect(() => {
     dispatch(setUserFetching(true))
-    window.fetch(`${process.env.BACKEND_PATH}/api/users`)
+    window.fetch(`${process.env.BACKEND_PATH || ''}/api/users`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)

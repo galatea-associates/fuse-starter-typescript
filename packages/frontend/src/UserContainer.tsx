@@ -10,7 +10,7 @@ export function UserContainer () {
   const { uuid } = useParams()
   const dispatch = useDispatch()
   useEffect(() => {
-    window.fetch(`${process.env.BACKEND_PATH}/api/user/${uuid}`)
+    window.fetch(`${process.env.BACKEND_PATH  || ''}/api/user/${uuid}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(response.statusText)
