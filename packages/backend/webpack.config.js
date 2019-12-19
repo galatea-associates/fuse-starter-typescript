@@ -20,7 +20,7 @@ module.exports = {
   //   global: true,
   //   fs: 'empty'
   // },
-  target: 'async-node',
+  target: 'node',
   module: {
     rules: [
       {
